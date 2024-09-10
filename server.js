@@ -91,6 +91,14 @@ app.get("/dashboard", (req, res) => {
   }
 });
 
+// API Routes
+app.use('/api/register', require('./api/register'));
+app.use('/api/login', require('./api/login'));
+app.use('/api/users', require('./api/users'));
+app.use('/api/expenses', require('./api/expenses'));
+app.use('/api/categories', require('./api/categories'));
+
+
 // User registration
 app.post("/api/register", async (req, res) => {
   const { email, username, password, confirmPassword } = req.body;
